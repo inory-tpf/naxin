@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>ACAT</title>
+    <style>
+        @media screen and (max-width: 500px) {
+
+            .DH-A,
+            .DH-C,
+            .DH-A,
+            .DH-T {
+                float: left;
+                width: 25%;
+                height: 100%;
+                text-align: center;
+                line-height: 100%;
+                font-size: 1rem;
+                color: antiquewhite;
+                margin-top: 100em;
+            }
+
+            @keyframes DH-cube {
+                0% {
+                    background-color: #d78a0b;
+                    height: 0vw;
+                }
+
+                25% {
+                    background-color: #d78a0b;
+                    height: 20vw;
+                    transform: rotate(0deg);
+                }
+
+                50% {
+                    background-color: #d78a0b;
+                    transform: rotate(45deg);
+                }
+
+                75% {
+                    background-color: #d78a0b;
+                    transform: rotate(90deg);
+                    width: 20%;
+                    height: 20vw;
+                }
+
+                100% {
+                    background-color: #d78a0b;
+                    transform: rotate(180deg);
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .ZT-Color-Line {
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                height: 50%;
+                bottom: -15%;
+                left: -25%;
+                list-style: none;
+                transform: rotate(45deg);
+            }
+
+            .ZT-Line1,
+            .ZT-Line2,
+            .ZT-Line3,
+            .ZT-Line4 {
+                position: absolute;
+                width: 100%;
+                height: 10vw;
+                box-shadow: 0px 0px 20px #252526
+            }
+
+            .ZT-main {
+                /* display: none; */
+                display: flex;
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                background-color: #252526;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .DH-cube {
+                display: flex;
+                width: 30%;
+                height: 30vw;
+                background-color: transparent;
+                align-items: center;
+                justify-content: center;
+                animation: DH-cube 4s 2s ease-in-out forwards;
+            }
+
+            .ZT-form {
+                position: relative;
+                width: 80%;
+                height: 80%;
+                background-color: rgb(55, 55, 61, .8);
+                box-shadow: 0px 0px 20px #111111;
+                border-radius: 2%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .ZT-switch-login {
+                float: left;
+                height: 60%;
+                font-size: 4vw;
+                color: #7baadb;
+                margin-top: 5.5%;
+                cursor: pointer;
+                transition: .5s;
+            }
+
+            .ZT-switch-signup {
+                float: left;
+                height: 60%;
+                font-size: 4vw;
+                color: rgb(255, 255, 255, .9);
+                margin-top: 5.5%;
+                cursor: pointer;
+                transition: .5s;
+            }
+
+            span {
+                float: left;
+                color: rgb(255, 255, 255, .7);
+                font-size: 3.7vw;
+                margin-top: 6.5%;
+            }
+
+            .ZT-form-main {
+                position: relative;
+                /* display: none; */
+                width: 50%;
+                height: 90%;
+                margin-left: 25%;
+                margin-top: 23%;
+                overflow: hidden;
+                opacity: 1;
+                z-index: 10;
+            }
+
+            .class-word,
+            .number-word,
+            .name-word,
+            .password-word,
+            .repassword-word {
+                position: absolute;
+                font-size: 3.5vw;
+                color: #7baadb;
+                margin-top: 3%;
+                transition: .5s;
+            }
+
+            input {
+                position: absolute;
+                background-color: transparent;
+                outline: none;
+                color: rgb(255, 255, 255, .8);
+                font-size: 3.5vw;
+                width: 100%;
+                border: none;
+                border-bottom: .1rem solid #7baadb;
+            }
+
+            @keyframes word1 {
+                from {
+                    font-size: 2vw;
+                    margin-top: -2%;
+                }
+
+                to {
+                    font-size: 3.5vw;
+                    margin-top: 3%;
+                }
+            }
+
+            @keyframes word1-2 {
+                from {
+                    font-size: 3.5vw;
+                    margin-top: 3%;
+                }
+
+                to {
+                    font-size: 2vw;
+                    margin-top: -2%;
+                }
+            }
+
+            .ZT-zb-word,
+            .ZT-xm-word,
+            .ZT-bj-word,
+            .ZT-xh-word,
+            .ZT-dh-word,
+            .ZT-zt-word {
+                position: absolute;
+                font-size: 3.5vw;
+                color: #7baadb;
+                margin-top: 3%;
+                transition: .5s;
+            }
+
+            .ZT-xm-value,
+            .ZT-bj-value,
+            .ZT-xh-value,
+            .ZT-dh-value {
+                margin-top: 3.4%;
+                color: rgb(255, 255, 255, .8);
+                font-size: 3.5vw;
+            }
+
+            .ZT-zb-value,
+            .ZT-zt-value {
+                color: rgb(255, 255, 255, .8);
+                font-size: 3.5vw;
+                margin-left: 50%;
+                margin-top: 3%
+            }
+
+            .button {
+                width: 35%;
+                height: 5.5vw;
+                background-color: #7baadb;
+                margin: 0 auto;
+                /* box-shadow: 0 0 8px #7baadb; */
+                cursor: pointer;
+                color: white;
+                border-radius: 4rem;
+                font-size: 3.5vw;
+                line-height: 5.5vw;
+                text-align: center;
+                ;
+                transition: .5s;
+            }
+
+            .ZT-log-button1,
+            .ZT-log-button2 {
+                float: left;
+                width: 20vw;
+                height: 5.5vw;
+                background-color: #7baadb;
+                color: rgb(255, 255, 255, .7);
+                cursor: pointer;
+                color: white;
+                border-radius: 10vw;
+                font-size: 3.5vw;
+                line-height: 5.5vw;
+                text-align: center;
+                transition: .5s;
+                margin-left: 20%;
+                margin-top: 4%;
+            }
+
+            .XZ-drawer-form {
+                z-index: 999;
+                position: absolute;
+                width: 25%;
+                height: 200%;
+                background-color: rgb(55, 55, 61);
+                transform: rotate(-0deg);
+                margin-top: -10%;
+                margin-left: -6%;
+                overflow: hidden;
+                box-shadow: 0px 0px 20px #252526;
+            }
+
+            .XZ-drawer-outside {
+                position: absolute;
+                width: 80%;
+                height: 40%;
+                transform: rotate(0deg);
+                margin-left: 30%;
+                margin-top: 70%;
+            }
+
+            .XZ-list-outside1,
+            .XZ-list-outside2,
+            .XZ-list-outside3,
+            .XZ-list-outside4 {
+                z-index: 10;
+                position: absolute;
+                width: 150%;
+                height: 150%;
+                background-color: #7baadb;
+                transform: rotate(-0deg);
+                margin-top: -10%;
+                margin-left: -130%;
+                overflow: hidden;
+                box-shadow: 0px 0px 20px #252526;
+                transition: .5s;
+            }
+
+            .XZ-list1,
+            .XZ-list2,
+            .XZ-list3,
+            .XZ-list4 {
+                float: right;
+                width: 54%;
+                height: 65%;
+                transform: rotate(0deg);
+                margin-top: 9%;
+            }
+
+            .XZ-list-outside2 {
+                z-index: 9;
+                background-color: #ce916a;
+                margin-left: -128.5%;
+            }
+
+            .XZ-list-outside3 {
+                z-index: 8;
+                background-color: #b5cea8;
+                margin-left: -127%;
+            }
+
+            .XZ-list-outside4 {
+                z-index: 7;
+                background-color: #d7ab4c;
+                margin-left: -125.5%;
+            }
+
+            .XZ-text {
+                width: 80%;
+                height: 25%;
+                margin-top: 5%;
+                background-color: #252526;
+                margin-left: 15%;
+                font-size: 5vw;
+                color: #ffffff;
+            }
+
+            .XZ-button1,
+            .XZ-button2,
+            .XZ-button3,
+            .XZ-button4 {
+                position: absolute;
+                width: 30%;
+                height: 8vw;
+                margin-left: 35%;
+                background-color: #7baadb;
+                margin-top: 180%;
+                cursor: pointer;
+                color: #ffffff;
+                font-size: 5vw;
+                text-align: center;
+                line-height: 8vw;
+            }
+
+            .XZ-picture {
+                width: 90%;
+                height: 60%;
+                background-color: antiquewhite;
+                margin-left: 8%;
+                margin-top: 35%
+            }
+
+            .XZ-drawer-inside1,
+            .XZ-drawer-inside2,
+            .XZ-drawer-inside3,
+            .XZ-drawer-inside4 {
+                width: 100%;
+                height: 7vw;
+                color: #ffffff;
+                font-size: 3.5vw;
+                line-height: 7vw;
+                text-align: center;
+                cursor: pointer;
+                margin-top: 3vw;
+            }
+
+            .XF-paper {
+                width: 60%;
+                height: 60vw;
+                background-color: #b5cea8;
+                margin-left: 20%;
+                margin-top: 60vw;
+                overflow: hidden;
+                box-shadow: 0px 0px 20px #000000;
+            }
+
+
+            .XF-phone {
+                width: 80%;
+                height: 20%;
+                margin-top: 3%;
+                margin-left: 10%;
+            }
+
+            .XF-word {
+                width: 100%;
+                height: 3.5vw;
+                font-size: 3.5vw;
+                color: rgb(255, 255, 255, .9);
+                text-shadow: 0px 0px 10px #252525;
+            }
+
+            .XF-say-text {
+                margin-top: 3%;
+                background-color: transparent;
+                width: 100%;
+                height: 15vw;
+                border: 1px solid linen;
+                outline: none;
+                font-size: 3.5vw;
+                color: #ffffff;
+                box-shadow: 0px 0px 10px #aaaaaa;
+                text-shadow: 0px 0px 10px #252525;
+                caret-color: #252525;
+            }
+
+            .XF-phone-number {
+                width: 100%;
+                height: 5vw;
+                margin-top: 3%;
+                border: 1px solid linen;
+                text-shadow: 0px 0px 10px #252525;
+                box-shadow: 0px 0px 10px #aaaaaa;
+                caret-color: #252525;
+            }
+
+            .XF-button {
+                width: 20%;
+                height: 5vw;
+                margin-left: 40%;
+                text-align: center;
+                font-size: 5vw;
+                color: rgb(255, 255, 255, .9);
+                text-shadow: 0px 0px 10px #252525;
+                cursor: pointer;
+            }
+
+            .XF-xinfeng {
+                position: absolute;
+                z-index: 999;
+                width: 70%;
+                height: 60vw;
+                margin-left: 15%;
+                margin-top: 220vw;
+            }
+
+            .ZT-zb,
+            .ZT-xm,
+            .ZT-bj,
+            .ZT-xh,
+            .ZT-dh,
+            .ZT-zt {
+
+                position: relative;
+                float: left;
+                width: 100%;
+                height: 8%;
+                margin-top: 2%;
+                transition: .5s;
+                overflow: hidden;
+            }
+
+            @keyframes XF-xinfeng {
+                0% {
+                    margin-top: 220vw;
+                }
+
+                34% {
+                    margin-top: 60vw;
+                }
+
+                67% {
+                    margin-top: 60vw;
+                }
+
+                100% {
+                    margin-top: -65vw;
+                }
+            }
+
+            .ZT-login-form {
+                display: none;
+                position: absolute;
+                z-index: 10;
+                width: 50%;
+                height: 90%;
+                margin-left: 25%;
+                margin-top: 33%;
+                overflow: hidden;
+            }
+
+            @keyframes XF-paper2 {
+                0% {
+                    margin-top: 60vw;
+                }
+
+                100% {
+                    margin-top: -65vw;
+                }
+            }
+
+            .last {
+                z-index: 1;
+                position: absolute;
+                margin-top: 65vw;
+                margin-left: 25%;
+                width: 50%;
+                height: 20vw;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 过渡动画 -->
+    <div class="DH-background">
+        <div class="DH-1">
+            <div class="DH-cube"></div>
+            <div class="DH-logo">
+                <div class="DH-A">A</div>
+                <div class="DH-C">C</div>
+                <div class="DH-A">A</div>
+                <div class="DH-T">T</div>
+            </div>
+        </div>
+        <div class="DH-line1"></div>
+        <div class="DH-line2"></div>
+        <div class="DH-line3"></div>
+    </div>
+    <!-- 主体界面 -->
+    <div class="ZT-main">
+        <ul class="ZT-Color-Line">
+            <li class="ZT-Line1"></li>
+            <li class="ZT-Line2"></li>
+            <li class="ZT-Line3"></li>
+            <li class="ZT-Line4"></li>
+        </ul>
+        <div class="ZT-form">
+            <div class="ZT-form-main">
+                <div class="ZT-switch">
+                    <div class="ZT-switch-login">登录</div>
+                    <span>|</span>
+                    <div class="ZT-switch-signup">注册</div>
+                </div>
+                <div class="ZT-all">
+                    <div class="class">
+                        <div class="class-word">专业班级</div>
+                        <input class="class-input" type="text" />
+                    </div>
+                    <div class="number">
+                        <div class="number-word">学号</div>
+                        <input class="number-input" type="text" />
+                    </div>
+
+                    <div class="name">
+                        <div class="name-word">姓名</div>
+                        <input class="name-input" type="text" />
+                    </div>
+
+                    <div class="password">
+                        <div class="password-word">密码</div>
+                        <input class="password-input" type="password" />
+                    </div>
+
+                    <div class="repassword">
+                        <div class="repassword-word">重复密码</div>
+                        <input class="repassword-input" type="password" />
+                    </div>
+
+                    <!-- <div class="forget">忘记密码</div> -->
+                    <div class="button">登录</div>
+                </div>
+            </div>
+            <div class="ZT-login-form">
+                <div class="ZT-zb">
+                    <div class="ZT-zb-word">已选组别:</div>
+                    <div class="ZT-zb-value">前端组</div>
+                </div>
+                <div class="ZT-xm">
+                    <div class="ZT-xm-word">姓名:</div>
+                    <input type="text" class="ZT-xm-value" />
+                </div>
+                <div class="ZT-bj">
+                    <div class="ZT-bj-word">专业班级:</div>
+                    <input type="text" class="ZT-bj-value" />
+                </div>
+                <!-- <div class="ZT-xh">
+                    <div class="ZT-xh-word">学号:</div>
+                    <input type="text" class="ZT-xh-value" />
+                </div> -->
+                <div class="ZT-dh">
+                    <div class="ZT-dh-word">联系电话:</div>
+                    <input type="text" class="ZT-dh-value" />
+                </div>
+                <div class="ZT-zt">
+                    <div class="ZT-zt-word">面试状态:</div>
+                    <div class="ZT-zt-value">等待面试</div>
+                </div>
+                <div class="ZT-log-button1">修改组别</div>
+                <div class="ZT-log-button2">修改数据</div>
+            </div>
+        </div>
+    </div>
+    <!-- 选择界面 -->
+    <div class="XZ-main">
+        <div class="XZ-drawer-form">
+            <div class="XZ-drawer-outside">
+                <div class="XZ-drawer-inside1">前端组</div>
+                <div class="XZ-drawer-inside2">后台组</div>
+                <div class="XZ-drawer-inside3">机器学习</div>
+                <div class="XZ-drawer-inside4">服务端</div>
+            </div>
+        </div>
+        <div class="XZ-list-outside1">
+            <div class="XZ-list1">
+                <div class="XZ-introduce">
+                    <div class="XZ-picture">
+                        <div class="XZ-picture-1"></div>
+                        <div class="XZ-picture-2"></div>
+                        <div class="XZ-picture-3"></div>
+                    </div>
+                    <div class="XZ-button1">加入我们</div>
+                </div>
+                <div class="XZ-text"></div>
+            </div>
+        </div>
+        <div class="XZ-list-outside2">
+            <div class="XZ-list2">
+                <div class="XZ-introduce">
+                    <div class="XZ-picture">
+                        <div class="XZ-picture-1"></div>
+                        <div class="XZ-picture-2"></div>
+                        <div class="XZ-picture-3"></div>
+                    </div>
+                    <div class="XZ-button2">加入我们</div>
+                </div>
+                <div class="XZ-text"></div>
+            </div>
+        </div>
+        <div class="XZ-list-outside3">
+            <div class="XZ-list3">
+                <div class="XZ-introduce">
+                    <div class="XZ-picture">
+                        <div class="XZ-picture-1"></div>
+                        <div class="XZ-picture-2"></div>
+                        <div class="XZ-picture-3"></div>
+                    </div>
+                    <div class="XZ-button3">加入我们</div>
+                </div>
+                <div class="XZ-text"></div>
+            </div>
+        </div>
+        <div class="XZ-list-outside4">
+            <div class="XZ-list4">
+                <div class="XZ-introduce">
+                    <div class="XZ-picture">
+                        <div class="XZ-picture-1"></div>
+                        <div class="XZ-picture-2"></div>
+                        <div class="XZ-picture-3"></div>
+                    </div>
+                    <div class="XZ-button4">加入我们</div>
+                </div>
+                <div class="XZ-text"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 确认界面 -->
+    <div class="XF-main">
+        <div class="XF-paper">
+            <div class="XF-say">
+                <div class="XF-word">请写下想对我们说的话:</div>
+                <textarea class="XF-say-text" type="text"></textarea>
+            </div>
+            <div class="XF-phone">
+                <div class="XF-word">请留下你的电话号码:</div>
+                <input class="XF-phone-number" type="text" />
+            </div>
+            <div class="XF-button">确定</div>
+        </div>
+        <div class="XF-xinfeng">
+            <div class="XF-shichuang">
+                <div class="XF-shichuang1-1"></div>
+                <div class="XF-shichuang1-2">
+                    <div class="XF-shichuang2-1"></div>
+                    <div class="XF-shichuang2-2">
+                        <div class="XF-shichuang3-1"></div>
+                        <div class="XF-shichuang3-2"></div>
+                        <div class="XF-shichuang3-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last">
+            <div class="logo">
+                <div class="logo-1"></div>
+                <div class="logo-2"></div>
+            </div>
+            <div class="wellcom">欢迎你的到来</div>
+            <div class="fina">刷新可重新登录</div>
+        </div>
+
+    </div>
+    <script>
+        var DH_background = document.getElementsByClassName("DH-background")[0];
+        var DH_1 = document.getElementsByClassName("DH-1")[0];
+        var DH_line1 = document.getElementsByClassName("DH-line1")[0];
+        var DH_line2 = document.getElementsByClassName("DH-line2")[0];
+        var DH_line3 = document.getElementsByClassName("DH-line3")[0];
+        var main = document.getElementsByClassName("main")[0];
+        var ZT_Line1 = document.getElementsByClassName("ZT-Line1")[0];
+        var ZT_Line2 = document.getElementsByClassName("ZT-Line2")[0];
+        var ZT_Line3 = document.getElementsByClassName("ZT-Line3")[0];
+        var ZT_Line4 = document.getElementsByClassName("ZT-Line4")[0];
+
+        var own_number;
+
+        var DH = setTimeout(function () {
+            DH_1.style.display = "none";
+            DH_line1.style.animation = "DH-line .5s ease-in-out forwards";
+            DH_line2.style.animation = "DH-line .5s .2s ease-in-out forwards";
+            DH_line3.style.animation = "DH-line .5s .4s ease-in-out forwards";
+            DH_background.style.background = "transparent";
+        }, 6000);
+        var Color_Line = setTimeout(function () {
+            DH_background.style.display = "none";
+            ZT_Line1.style.animation = "ZT-Line1-2 8s ease-in-out infinite";
+            ZT_Line2.style.animation = "ZT-Line2-2 8s ease-in-out infinite";
+            ZT_Line3.style.animation = "ZT-Line3-2 8s ease-in-out infinite";
+            ZT_Line4.style.animation = "ZT-Line4-2 8s ease-in-out infinite";
+        }, 8100);
+        var class_word = document.getElementsByClassName("class-word")[0];
+        var class_input = document.getElementsByClassName("class-input")[0];
+        var number_word = document.getElementsByClassName("number-word")[0];
+        var number_input = document.getElementsByClassName("number-input")[0];
+        var name_word = document.getElementsByClassName("name-word")[0];
+        var name_input = document.getElementsByClassName("name-input")[0];
+        var password_word = document.getElementsByClassName("password-word")[0];
+        var password_input = document.getElementsByClassName("password-input")[0];
+        var repassword_word = document.getElementsByClassName("repassword-word")[0];
+        var repassword_input = document.getElementsByClassName("repassword-input")[0];
+        var ZT_xm_word = document.getElementsByClassName("ZT-xm-word")[0];
+        var ZT_xm_value = document.getElementsByClassName("ZT-xm-value")[0];
+        var ZT_bj_word = document.getElementsByClassName("ZT-bj-word")[0];
+        var ZT_bj_value = document.getElementsByClassName("ZT-bj-value")[0];
+        // var ZT_xh_word = document.getElementsByClassName("ZT-xh-word")[0];
+        var ZT_xh_value = document.getElementsByClassName("ZT-xh-value")[0];
+        var ZT_dh_word = document.getElementsByClassName("ZT-dh-word")[0];
+        var ZT_dh_value = document.getElementsByClassName("ZT-dh-value")[0];
+        var arr = [{ input: class_input, word: class_word }, { input: number_input, word: number_word }, { input: name_input, word: name_word }, { input: password_input, word: password_word }, { input: repassword_input, word: repassword_word }, { input: ZT_xm_value, word: ZT_xm_word }, { input: ZT_bj_value, word: ZT_bj_word }, { input: ZT_dh_value, word: ZT_dh_word }]
+
+        for (let i = 0; i < 8; i++) {
+            arr[i].input.addEventListener('click', function () {
+                for (let j = 0; j < 8; j++) {
+                    if ((arr[j].input.value == "") && (arr[j].word.style.animation == "0.5s ease-in-out 0s 1 normal forwards running word1-2") && i != j) {
+                        arr[j].word.style.animation = "word1 .5s ease-in-out forwards";
+                    }
+                    else if (i == j) {
+                        arr[j].word.style.animation = "word1-2 .5s ease-in-out forwards";
+                    }
+                }
+            })
+        }
+        var ZT_switch_login = document.getElementsByClassName("ZT-switch-login")[0];
+        var ZT_switch_signup = document.getElementsByClassName("ZT-switch-signup")[0];
+        var class_ = document.getElementsByClassName("class")[0];
+        var number = document.getElementsByClassName("number")[0];
+        var name_ = document.getElementsByClassName("name")[0];
+        var password = document.getElementsByClassName("password")[0];
+        var repassword = document.getElementsByClassName("repassword")[0];
+        var ZT_all = document.getElementsByClassName("ZT-all")[0];
+        var forget = document.getElementsByClassName("forget")[0];
+        var button = document.getElementsByClassName("button")[0];
+        var ZT_switch_ = document.getElementsByClassName("ZT-switch")[0];
+        ZT_switch_login.onclick = function () {
+            class_.style.display = "none";
+            class_.style.opacity = "0";
+            name_.style.display = "none";
+            name_.style.opacity = "0";
+            repassword.style.display = "none";
+            repassword.style.opacity = "0";
+            ZT_all.style.marginTop = "10%";
+            ZT_switch_.style.marginTop = "10%";
+            button.innerHTML = "登录";
+            ZT_switch_signup.style.color = "rgb(255, 255, 255,.9)";
+            ZT_switch_login.style.color = "#7baadb";
+        }
+        ZT_switch_signup.onclick = function () {
+            class_.style.display = "block";
+            class_.style.opacity = "1";
+            name_.style.display = "block";
+            name_.style.opacity = "1";
+            repassword.style.display = "block";
+            repassword.style.opacity = "1";
+            ZT_all.style.marginTop = "0%";
+            ZT_switch_.style.marginTop = "0%";
+            button.innerHTML = "注册";
+            ZT_switch_signup.style.color = "#7baadb";
+            ZT_switch_login.style.color = "rgb(255, 255, 255,.9)";
+        }
+        var ZT_main = document.getElementsByClassName("ZT-main")[0];
+        var ZT_form = document.getElementsByClassName("ZT-form")[0];
+        var XZ_drawer_form = document.getElementsByClassName("XZ-drawer-form")[0];
+        var XZ_list_outside1 = document.getElementsByClassName("XZ-list-outside1")[0];
+        var XZ_list_outside2 = document.getElementsByClassName("XZ-list-outside2")[0];
+        var XZ_list_outside3 = document.getElementsByClassName("XZ-list-outside3")[0];
+        var XZ_list_outside4 = document.getElementsByClassName("XZ-list-outside4")[0];
+        var ZT_form_main = document.getElementsByClassName("ZT-form-main")[0];
+        var ZT_login_form = document.getElementsByClassName("ZT-login-form")[0]
+        var ZT_zb_value = document.getElementsByClassName("ZT-zb-word")[0];
+        var ZT_zt_value = document.getElementsByClassName("ZT-zt-word")[0];
+
+        button.onclick = function () {
+            var key;
+
+            if (button.innerHTML == "登录") {
+
+
+
+                // var xmlhttp;
+                // if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                //     xmlhttp = new XMLHttpRequest();
+                // }
+                // else {// code for IE6, IE5
+                //     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                // }
+                // xmlhttp.onreadystatechange = function () {
+                //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //         var mes = JSON.parese(xmlhttp.responseText)
+                //         key = mes
+                //         else {
+                //             alter("登录失败 请检查各项操作");
+                //         }
+                //     } else {
+                //         alert('网络错误 请重试！')
+                //     }
+                // }
+                // xmlhttp.open("POST", "   ", true);
+                // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // xmlhttp.send("login"+"&number=" + arr[1].input.value + "&password=" + arr[3].input.value);
+
+                own_number = arr[1].input.value;
+
+                // if (key == 1) {
+
+                // XZ();
+
+                // }
+                // if(key == 2){
+                ZT_form_main.style.animation = "ZT-form-main .5s ease-in-out forwards";
+                setTimeout(function () {
+                    ZT_login_form.style.display = "block"
+                    ZT_form_main.style.display = "none";
+                    ZT_login_form.style.animation = "ZT-login-form .5s ease-in-out forwards";
+                }, 500)
+                //     var xmlhttp;
+                //         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                //             xmlhttp = new XMLHttpRequest();
+                //         }
+                //         else {// code for IE6, IE5
+                //             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                //         }
+                //         xmlhttp.onreadystatechange = function () {
+                //             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //                 var mes = JSON.parese(xmlhttp.responseText)
+                //                 ZT_zb_value.innerHTML = mes.type;
+                //                 ZT_xm_value.value = mes.name;
+                //                 ZT_bj_value.value = mes.class;
+                //                 ZT_dh_value.value = mes.phone;
+                //                 ZT_zt_value.innerHTML = mes.zt;
+                //             } else {
+                //                 alert('网络错误 请重试！')
+                //             }
+                //         }
+                //         xmlhttp.open("POST", "   ", true);
+                //         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                //         xmlhttp.send("signup2");
+
+                // }
+            }
+
+
+            if (button.innerHTML == "注册") {
+                var reg = /^[0-9]+$/
+
+                if (reg.test(arr[1].input.value)) {
+
+                    if (password_input.value == repassword_input.value) {
+                        // var xmlhttp;
+                        // if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                        //     xmlhttp = new XMLHttpRequest();
+                        // }
+                        // else {// code for IE6, IE5
+                        //     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        // }
+                        // xmlhttp.onreadystatechange = function () {
+                        //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        //         var mes = JSON.parese(xmlhttp.responseText)
+                        //         if (mes == 1) {
+                        //             alert("注册成功！");
+                        //             key = 1;
+                        //         }
+                        //         else {
+                        //             alter("注册失败 请检查各项操作");
+                        //         }
+                        //     } else {
+                        //         alert('网络错误 请重试！')
+                        //     }
+                        // }
+                        // xmlhttp.open("POST", "   ", true);
+                        // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        // xmlhttp.send("signup"+"&class=" + arr[0].input.value + "&number=" + arr[1].input.value + "&username=" + arr[2].input.value + "&password=" + arr[3].input.value);
+
+                    }
+                    else {
+                        alert("密码输入不一致，请重新输入")
+                    }
+                }
+                else{
+                    alert("学号需为纯数字")
+                }
+            }
+        }
+        function XZ() {
+            ZT_form.style.animation = "ZT-form 1s ease-in-out forwards";
+            ZT_Line1.style.animation = "ZT-Line1-3 .4s ease-in-out forwards";
+            ZT_Line2.style.animation = "ZT-Line2-3 .6s ease-in-out forwards";
+            ZT_Line3.style.animation = "ZT-Line3-3 1s ease-in-out forwards";
+            ZT_Line4.style.animation = "ZT-Line4-3 .8s ease-in-out forwards";
+            setTimeout(function () {
+                ZT_main.style.display = "none";
+                XZ_drawer_form.style.animation = "XZ-drawer-form 1s ease-in-out";
+                XZ_list_outside1.style.animation = "XZ-list-outside1 .5s ease-in-out";
+                XZ_list_outside2.style.animation = "XZ-list-outside2 .5s ease-in-out";
+                XZ_list_outside3.style.animation = "XZ-list-outside3 .5s ease-in-out";
+                XZ_list_outside4.style.animation = "XZ-list-outside4 .5s ease-in-out";
+            }, 1000);
+        }
+
+
+        var ZT_log_button1 = document.getElementsByClassName("ZT-log-button1")[0]
+        var ZT_log_button2 = document.getElementsByClassName("ZT-log-button2")[0]
+        ZT_log_button1.onclick = function () {
+            XZ();
+        }
+        ZT_log_button2.onclick = function () {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var mes = JSON.parese(xmlhttp.responseText)
+                    if (mes == 1) {
+                        alert("编辑成功")
+                    }
+                    else {
+                        alter("编辑失败 请检查各项操作");
+                    }
+                } else {
+                    alert('网络错误 请重试！')
+                }
+            }
+            xmlhttp.open("POST", "   ", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("fix" + "&class" + arr[5].input.value + "&username" + arr[6].input.value + "&phonenum" + arr[7].input.value);
+            own_number = arr[7].input.value;
+        }
+
+        var XZ_drawer_inside1 = document.getElementsByClassName("XZ-drawer-inside1")[0];
+        var XZ_drawer_inside2 = document.getElementsByClassName("XZ-drawer-inside2")[0];
+        var XZ_drawer_inside3 = document.getElementsByClassName("XZ-drawer-inside3")[0];
+        var XZ_drawer_inside4 = document.getElementsByClassName("XZ-drawer-inside4")[0];
+        var arr2 = [{ out: XZ_list_outside1, in: XZ_drawer_inside1 }, { out: XZ_list_outside2, in: XZ_drawer_inside2 }, { out: XZ_list_outside3, in: XZ_drawer_inside3 }, { out: XZ_list_outside4, in: XZ_drawer_inside4 }]
+        for (let i = 0; i < 4; i++) {
+            arr2[i].in.addEventListener('click', function () {
+                arr2[i].out.style.marginLeft = "-50%";
+                switch (i) {
+                    case 0:
+                        arr2[1].out.style.marginLeft = "-128.5%";
+                        arr2[2].out.style.marginLeft = "-127%";
+                        arr2[3].out.style.marginLeft = "-125.5%"; break;
+                    case 1:
+                        arr2[0].out.style.marginLeft = "-130%";
+                        arr2[2].out.style.marginLeft = "-127%";
+                        arr2[3].out.style.marginLeft = "-125.5%"; break;
+                    case 2:
+                        arr2[0].out.style.marginLeft = "-130%";
+                        arr2[1].out.style.marginLeft = "-128.5%";
+                        arr2[3].out.style.marginLeft = "-125.5%"; break;
+                    case 3:
+                        arr2[1].out.style.marginLeft = "-128.5%";
+                        arr2[2].out.style.marginLeft = "-127%";
+                        arr2[0].out.style.marginLeft = "-130%"; break;
+                }
+            })
+        }
+
+
+
+
+        var XZ_button1 = document.getElementsByClassName("XZ-button1")[0]
+        var XZ_button2 = document.getElementsByClassName("XZ-button2")[0]
+        var XZ_button3 = document.getElementsByClassName("XZ-button3")[0]
+        var XZ_button4 = document.getElementsByClassName("XZ-button4")[0]
+        var XZ_main = document.getElementsByClassName("XZ-main")[0];
+        var XF_paper = document.getElementsByClassName("XF-paper")[0];
+        var leibie;
+        var arr3 = [{ XZ_button: XZ_button1, tip: "web", XZ_color: "#7baadb" }, { XZ_button: XZ_button2, tip: "后台组", XZ_color: "#ce916a" }, { XZ_button: XZ_button3, tip: "机器学习", XZ_color: "#b5cea8" }, { XZ_button: XZ_button4, tip: "服务端", XZ_color: "#d7ab4c" }]
+        for (let i = 0; i < 4; i++) {
+            arr3[i].XZ_button.addEventListener('click', function () {
+                XZ_drawer_form.style.animation = "XZ-drawer-form-2 1s ease-in-out forwards";
+                XZ_list_outside1.style.animation = "XZ-list-outside1-2 .5s ease-in-out forwards";
+                XZ_list_outside2.style.animation = "XZ-list-outside2-2 .5s ease-in-out forwards";
+                XZ_list_outside3.style.animation = "XZ-list-outside3-2 .5s ease-in-out forwards";
+                XZ_list_outside4.style.animation = "XZ-list-outside4-2 .5s ease-in-out forwards";
+                leibie = arr[i].tip;
+                setTimeout(function () {
+                    XZ_main.style.display = "none";
+                    XF_paper.style.animation = "XF-paper 1s ease-in-out forwards"
+                    XF_paper.style.backgroundColor = arr3[i].XZ_color;
+                }, 1000)
+            })
+        }
+
+        var XF_button = document.getElementsByClassName("XF-button")[0];
+        var XF_xinfeng = document.getElementsByClassName("XF-xinfeng")[0];
+        var XF_main = document.getElementsByClassName("XF-main")[0];
+        var XF_say_text = document.getElementsByClassName("XF-say-text")[0];
+        var XF_phone_number = document.getElementsByClassName("XF-phone-number")[0];
+        var last = document.getElementsByClassName("last")[0];
+        XF_button.onclick = function () {
+            if (XF_phone_number.value.length == 11) {
+                XF_xinfeng.style.animation = "XF-xinfeng 6s ease-in-out forwards";
+                XF_paper.style.animation = "XF-paper2 2s 4s ease-in-out forwards ";
+                XF_main.style.animation = "XF-main 7s ease-in-out forwards";
+                last.style.animation = "last 1s 5s ease-in-out forwards"
+                // var xmlhttp;
+                // if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                //     xmlhttp = new XMLHttpRequest();
+                // }
+                // else {// code for IE6, IE5
+                //     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                // }
+                // xmlhttp.onreadystatechange = function () {
+                //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                //         var mes = JSON.parese(xmlhttp.responseText)
+                //         if (mes == 1) {
+                //             alert("提交成功！");
+                //             key = 1;
+                //         }
+                //         else {
+                //             alter("提交失败 请检查各项操作");
+                //         }
+                //     } else {
+                //         alert('网络错误 请重试！')
+                //     }
+                // }
+                // xmlhttp.open("POST", "   ", true);
+                // xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                // xmlhttp.send("say" + "&number=" + own_number + "&type=" + leibie + "&say=" + XF_say_text.value + "&phone=" + XF_phone_number.value);
+                setTimeout(function () {
+                    XF_paper.style.display = "none";
+                    XF_xinfeng.style.display = "none";
+                }, 7000)
+            }
+            else {
+                alert("电话位数错误，请重新输入")
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
